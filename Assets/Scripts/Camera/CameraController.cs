@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿
 using UnityEngine;
 
 public class CameraController : MonoBehaviour
@@ -26,6 +25,6 @@ public class CameraController : MonoBehaviour
         _moveY = Mathf.Clamp(_moveY, -90, 90);
         
         _transform.localRotation = Quaternion.Euler(_moveY,0,0);
-        _playerTransform.Rotate(_moveX*Vector3.up*Time.fixedDeltaTime);
+        _playerTransform.Rotate(Vector3.up * (_moveX * Time.fixedDeltaTime));
     }
 }

@@ -1,16 +1,11 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Events;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private float moveSpeed;
-    [SerializeField] private float jumpHeight;
-    [SerializeField] private float gravityScale;
-    private CharacterController _characterController;
+    private IMovement _playerMovement;
     private Transform _transform;
-    private float _horizontalInputs, _verticalInputs, _directionY;
-    private Vector3 _velocity;
+    private float _horizontalInputs, _verticalInputs;
     public UnityEvent activatingAbilityStopTime;
     public UnityEvent deactivatingAbilityStopTime;
     public UnityEvent activatingAbilityBackTime;
@@ -20,8 +15,8 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        _characterController = GetComponent<CharacterController>();
         _transform = GetComponent<Transform>();
+        _playerMovement = GetComponent<IMovement>();
     }
 
 
@@ -32,32 +27,14 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Movement();
+       _playerMovement.Movement(_transform.forward * _verticalInputs + _transform.right * _horizontalInputs);
+       if (Input.GetKey(KeyCode.Space))
+       {
+           _playerMovement.Jump();
+       }
+
     }
-
-    private void Movement()
-    {
-        _velocity = (_transform.forward * _verticalInputs + _transform.right * _horizontalInputs).normalized *
-                    moveSpeed;
-        if (_characterController.isGrounded)
-        {
-            _directionY = -1;
-            if (Input.GetKey(KeyCode.Space))
-            {
-                _directionY = jumpHeight;
-            }
-        }
-
-        CalculateGravity();
-        _characterController.Move(_velocity * Time.deltaTime);
-    }
-
-    private void CalculateGravity()
-    {
-        _directionY -= gravityScale * Time.deltaTime;
-        _velocity.y = _directionY;
-    }
-
+    
     private void Inputs()
     {
         _horizontalInputs = Input.GetAxisRaw("Horizontal");
@@ -75,11 +52,10 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey(KeyCode.E))
         {
             activatingAbilityBackTime.Invoke();
-        }else if (!Input.GetKey(KeyCode.Q))
+        }
+        else if (!Input.GetKey(KeyCode.Q))
         {
             deactivatingAbilityBackTime.Invoke();
         }
-        
-        
     }
 }
