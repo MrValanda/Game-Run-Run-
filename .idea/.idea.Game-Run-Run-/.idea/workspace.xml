@@ -10,7 +10,13 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4d990e63-6095-46c0-b212-7852b031e015" name="Default Changelist" comment="" />
+    <list default="true" id="4d990e63-6095-46c0-b212-7852b031e015" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Game-Run-Run-/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Game-Run-Run-/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Object/RotationObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Object/RotationObject.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Object/TimeBody.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Object/TimeBody.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/CharacterControllerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/CharacterControllerMovement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -27,12 +33,13 @@
       <list>
         <option value="$PROJECT_DIR$/Assets/IMovement.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/IMovement.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Player/RigidBodyMovement.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Player/CharacterControllerMovement.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Object/RotationObject.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Camera/CameraController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player/CharacterControllerMovement.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/TestCrtipt.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player/RigidBodyMovement.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Object/RotationObject.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Object/TimeBody.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" />
       </list>
     </option>
   </component>
@@ -46,7 +53,7 @@
     <property name="Discover.Launch.Via.Unity" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="settings.editor.selected.configurable" value="CodeLensConfigurable" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
@@ -85,6 +92,9 @@
       <option name="presentableId" value="Default" />
       <updated>1618478478500</updated>
       <workItem from="1618478598660" duration="8560000" />
+      <workItem from="1618550986263" duration="1389000" />
+      <workItem from="1618904828206" duration="1846000" />
+      <workItem from="1619014443665" duration="5722000" />
     </task>
     <servers />
   </component>
@@ -103,6 +113,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
@@ -112,9 +123,13 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="541" y="114" key="RiderGenerateDialog/0.0.1536.824@0.0.1536.824" timestamp="1618501487199" />
-    <state x="277" y="57" key="SettingsEditor" timestamp="1618505097805">
+    <state x="277" y="57" key="SettingsEditor" timestamp="1619016960677">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="277" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1618505097805" />
+    <state x="277" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1619016960677" />
+    <state x="93" y="93" width="1350" height="638" key="VCS.FileHistoryDialog" timestamp="1619020484406">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="93" y="93" width="1350" height="638" key="VCS.FileHistoryDialog/0.0.1536.824@0.0.1536.824" timestamp="1619020484406" />
   </component>
 </project>

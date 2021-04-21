@@ -6,14 +6,15 @@ struct TimePosition
     public Vector3 Position;
     public Quaternion Quaternion;
     public Vector3 Speed;
+    public Vector3 AngularVelocity;
 }
 public class TimeBody : MonoBehaviour
 {
     private PlayerController _playerController;
     private Rigidbody _rb;
     private Stack<TimePosition> _stack;
-    private float _speed;
-    private Vector3 _normalize;
+    private Vector3 _velocity;
+    private Vector3 _angularVelocity;
     private Transform _transform;
     void Start()
     {
@@ -22,38 +23,52 @@ public class TimeBody : MonoBehaviour
         Debug.Log(_playerController);
         _rb = GetComponent<Rigidbody>();
         _stack=new Stack<TimePosition>();
-        _playerController.activatingAbilityStopTime.AddListener(() =>
-        {
-            _normalize = _rb.velocity.normalized;
-            _speed = _rb.velocity.magnitude;
-            _rb.velocity = Vector3.zero;
-            _rb.isKinematic = true;
-        });
-        _playerController.deactivatingAbilityStopTime.AddListener(() =>
-        {
-            _rb.velocity = _normalize * _speed;
-            _rb.isKinematic = false;
-            
-        });
-        _playerController.activatingAbilityBackTime.AddListener(BackTime);
-        _playerController.deactivatingAbilityBackTime.AddListener(SaveTimePosition);
+        _playerController.ActivatingAbilityStopTime+= activatingStopTime;
+        _playerController.DeactivatingAbilityStopTime+=  deactivatingStopTime;
+        _playerController.UseAbilityBackTime += backTime;
+        _playerController.AbilityNoUse+=saveTimePosition;
+        _playerController.DeactivatingAbilityBackTime += stopBackTime;
     }
-    
-    private void SaveTimePosition()
+
+    private void activatingStopTime()
+    {
+        _velocity = _rb.velocity;
+        _angularVelocity = _rb.angularVelocity;
+        _rb.velocity = Vector3.zero;
+        _rb.isKinematic = true;
+    }
+
+    private void deactivatingStopTime()
+    {
+        _rb.velocity = _velocity;
+        _rb.angularVelocity = _angularVelocity;
+        _rb.isKinematic = false;
+    }
+
+    private void saveTimePosition()
     {
         TimePosition timePosition = new TimePosition
-            {Position = transform.position, Quaternion = transform.rotation, Speed = _rb.velocity};
+        {
+            Position = _transform.position, Quaternion = _transform.rotation, Speed = -_rb.velocity,
+            AngularVelocity = -_rb.angularVelocity
+        };
         _stack.Push(timePosition);
     }
 
-    private void BackTime()
+    private void backTime()
     {
         if (_stack.Count == 0)
             return;
-
+        
         TimePosition timePosition = _stack.Pop();
-        _transform.position = timePosition.Position;
-        _transform.rotation = timePosition.Quaternion;
+        //_transform.rotation= timePosition.Quaternion; 
         _rb.velocity = timePosition.Speed;
+        _rb.angularVelocity = timePosition.AngularVelocity;
+    }
+
+    private void stopBackTime()
+    {
+        _rb.velocity = -_rb.velocity;
+        _rb.angularVelocity = -_rb.angularVelocity;
     }
 }

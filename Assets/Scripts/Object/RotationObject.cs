@@ -13,6 +13,7 @@ public class RotationObject : MonoBehaviour
 
      void Update()
      {
-         _rigidbody.angularVelocity = rotationVector.normalized * speed;
+         _rigidbody.AddTorque(rotationVector.normalized * speed);
+
      }
 }

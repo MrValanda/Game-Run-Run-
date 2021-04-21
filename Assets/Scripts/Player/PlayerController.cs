@@ -1,15 +1,16 @@
-﻿using UnityEngine;
-using UnityEngine.Events;
+﻿using System;
+using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
     private IMovement _playerMovement;
     private Transform _transform;
     private float _horizontalInputs, _verticalInputs;
-    public UnityEvent activatingAbilityStopTime;
-    public UnityEvent deactivatingAbilityStopTime;
-    public UnityEvent activatingAbilityBackTime;
-    public UnityEvent deactivatingAbilityBackTime;
+    public event Action ActivatingAbilityStopTime;
+    public event Action DeactivatingAbilityStopTime;
+    public event Action UseAbilityBackTime;
+    public event Action DeactivatingAbilityBackTime;
+    public event Action AbilityNoUse;
 
 
 
@@ -41,21 +42,24 @@ public class PlayerController : MonoBehaviour
         _verticalInputs = Input.GetAxisRaw("Vertical");
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            activatingAbilityStopTime.Invoke();
+            ActivatingAbilityStopTime?.Invoke();
+        }
+
+        if (!Input.GetKey(KeyCode.Q))
+        {
+            if (Input.GetKey(KeyCode.E))
+                UseAbilityBackTime?.Invoke();
+            else AbilityNoUse?.Invoke();
         }
 
         if (Input.GetKeyUp(KeyCode.Q))
         {
-            deactivatingAbilityStopTime.Invoke();
+            DeactivatingAbilityStopTime?.Invoke();
         }
 
-        if (Input.GetKey(KeyCode.E))
+        if (Input.GetKeyUp(KeyCode.E))
         {
-            activatingAbilityBackTime.Invoke();
-        }
-        else if (!Input.GetKey(KeyCode.Q))
-        {
-            deactivatingAbilityBackTime.Invoke();
+            DeactivatingAbilityBackTime?.Invoke();
         }
     }
 }

@@ -359,7 +359,7 @@ GameObject:
   - component: {fileID: 515237831}
   - component: {fileID: 515237830}
   - component: {fileID: 515237828}
-  - component: {fileID: 515237834}
+  - component: {fileID: 515237833}
   - component: {fileID: 515237829}
   m_Layer: 9
   m_Name: Capsule
@@ -380,18 +380,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 719f015bf523a484e8be5afccfa9afb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activatingAbilityStopTime:
-    m_PersistentCalls:
-      m_Calls: []
-  deactivatingAbilityStopTime:
-    m_PersistentCalls:
-      m_Calls: []
-  activatingAbilityBackTime:
-    m_PersistentCalls:
-      m_Calls: []
-  deactivatingAbilityBackTime:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!136 &515237829
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -470,7 +458,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &515237834
+--- !u!114 &515237833
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -479,12 +467,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 515237827}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52d74f0d7c68ba2419ec76cc651e7d04, type: 3}
+  m_Script: {fileID: 11500000, guid: fa90935305815624993e9bc298fbefea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 10
-  _jumpHeight: 5
-  _gravityScale: 10
+  _jumpForce: 7
+  _layerMask:
+    serializedVersion: 2
+    m_Bits: 311
 --- !u!1 &603399893
 GameObject:
   m_ObjectHideFlags: 0
@@ -642,7 +632,7 @@ Rigidbody:
   serializedVersion: 2
   m_Mass: 100
   m_Drag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -749,7 +739,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationVector: {x: 1, y: 0, z: 0}
-  speed: 2
+  speed: 10
 --- !u!1 &697772991
 GameObject:
   m_ObjectHideFlags: 0
