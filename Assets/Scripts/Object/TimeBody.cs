@@ -3,31 +3,26 @@ using UnityEngine;
 
 struct TimePosition
 {
-    public Vector3 Position;
-    public Quaternion Quaternion;
     public Vector3 Speed;
     public Vector3 AngularVelocity;
 }
 public class TimeBody : MonoBehaviour
 {
-    private PlayerController _playerController;
+    private Player _player;
     private Rigidbody _rb;
     private Stack<TimePosition> _stack;
     private Vector3 _velocity;
     private Vector3 _angularVelocity;
-    private Transform _transform;
     void Start()
     {
-        _transform = GetComponent<Transform>();
-        _playerController = FindObjectOfType<PlayerController>();
-        Debug.Log(_playerController);
+        _player = FindObjectOfType<Player>();
         _rb = GetComponent<Rigidbody>();
         _stack=new Stack<TimePosition>();
-        _playerController.ActivatingAbilityStopTime+= activatingStopTime;
-        _playerController.DeactivatingAbilityStopTime+=  deactivatingStopTime;
-        _playerController.UseAbilityBackTime += backTime;
-        _playerController.AbilityNoUse+=saveTimePosition;
-        _playerController.DeactivatingAbilityBackTime += stopBackTime;
+        _player.ActivatingAbilityStopTime+= activatingStopTime;
+        _player.DeactivatingAbilityStopTime+=  deactivatingStopTime;
+        _player.UseAbilityBackTime += backTime;
+        _player.AbilityNoUse+=saveTimePosition;
+        _player.DeactivatingAbilityBackTime += stopBackTime;
     }
 
     private void activatingStopTime()
@@ -49,7 +44,7 @@ public class TimeBody : MonoBehaviour
     {
         TimePosition timePosition = new TimePosition
         {
-            Position = _transform.position, Quaternion = _transform.rotation, Speed = -_rb.velocity,
+            Speed = -_rb.velocity,
             AngularVelocity = -_rb.angularVelocity
         };
         _stack.Push(timePosition);
@@ -61,7 +56,6 @@ public class TimeBody : MonoBehaviour
             return;
         
         TimePosition timePosition = _stack.Pop();
-        //_transform.rotation= timePosition.Quaternion; 
         _rb.velocity = timePosition.Speed;
         _rb.angularVelocity = timePosition.AngularVelocity;
     }

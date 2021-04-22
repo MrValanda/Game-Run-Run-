@@ -10,11 +10,7 @@ public class CharacterControllerMovement : MonoBehaviour,IMovement
     void Start()
     {
     UseGravity = true;
-        _characterController = GetComponent<CharacterController>();
-        if (_characterController == null)
-        {
-            _characterController = gameObject.AddComponent<CharacterController>();
-        }
+    _characterController = GetComponent<CharacterController>() ?? gameObject.AddComponent<CharacterController>();
     }
     
     public void Movement(Vector3 direction)

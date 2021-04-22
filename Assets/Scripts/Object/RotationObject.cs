@@ -14,6 +14,5 @@ public class RotationObject : MonoBehaviour
      void Update()
      {
          _rigidbody.AddTorque(rotationVector.normalized * speed);
-
      }
 }

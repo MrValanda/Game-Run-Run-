@@ -17,7 +17,7 @@
           <e p="Player" t="Include">
             <e p="CharacterControllerMovement.cs" t="Include" />
             <e p="IMovement.cs" t="Include" />
-            <e p="PlayerController.cs" t="Include" />
+            <e p="Player.cs" t="Include" />
             <e p="RigidBodyMovement.cs" t="Include" />
           </e>
         </e>

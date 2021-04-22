@@ -11,12 +11,8 @@ public class RigidBodyMovement : MonoBehaviour,IMovement
     private void Start()
     {
         _transform = GetComponent<Transform>();
-        _rigidbody = GetComponent<Rigidbody>();
-        if (_rigidbody == null)
-        {
-            _rigidbody = gameObject.AddComponent<Rigidbody>();
-        }
-        
+        _rigidbody = GetComponent<Rigidbody>() ?? gameObject.AddComponent<Rigidbody>();
+
         _rigidbody.freezeRotation = true;
     }
 

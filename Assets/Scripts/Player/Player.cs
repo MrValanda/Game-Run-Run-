@@ -1,8 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class Player : MonoBehaviour
 {
+    [SerializeField]
+    private KeyCode _backTimeKey, _timeStopKey;
     private IMovement _playerMovement;
     private Transform _transform;
     private float _horizontalInputs, _verticalInputs;
@@ -40,26 +42,35 @@ public class PlayerController : MonoBehaviour
     {
         _horizontalInputs = Input.GetAxisRaw("Horizontal");
         _verticalInputs = Input.GetAxisRaw("Vertical");
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            ActivatingAbilityStopTime?.Invoke();
-        }
+        timeStopAbility();
 
-        if (!Input.GetKey(KeyCode.Q))
+        backTimeAbility();
+    }
+
+    private void backTimeAbility()
+    {
+        if (Input.GetKeyUp(_backTimeKey))
+        {
+            DeactivatingAbilityBackTime?.Invoke();
+        }
+        if (!Input.GetKey(_timeStopKey))
         {
             if (Input.GetKey(KeyCode.E))
                 UseAbilityBackTime?.Invoke();
             else AbilityNoUse?.Invoke();
         }
 
-        if (Input.GetKeyUp(KeyCode.Q))
+    }
+
+    private void timeStopAbility()
+    {
+        if (Input.GetKeyDown(_timeStopKey))
+        {
+            ActivatingAbilityStopTime?.Invoke();
+        }
+        if (Input.GetKeyUp(_timeStopKey))
         {
             DeactivatingAbilityStopTime?.Invoke();
-        }
-
-        if (Input.GetKeyUp(KeyCode.E))
-        {
-            DeactivatingAbilityBackTime?.Invoke();
         }
     }
 }
