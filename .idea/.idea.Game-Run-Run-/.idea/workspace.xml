@@ -11,13 +11,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4d990e63-6095-46c0-b212-7852b031e015" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Game-Run-Run-/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Game-Run-Run-/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Game-Run-Run-/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Game-Run-Run-/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Game-Run-Run-/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Game-Run-Run-/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PhysicMaterials/Wall.physicMaterial" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PhysicMaterials/Wall.physicMaterial" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/CharacterControllerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/CharacterControllerMovement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/IMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/IMovement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Player.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/RigidBodyMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/RigidBodyMovement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,6 +46,7 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/IMovement.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/RigidBodyMovement.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/Player.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/MapGenerator/GenerationMap.cs" />
       </list>
     </option>
   </component>
@@ -103,6 +105,10 @@
       <workItem from="1619082998930" duration="2836000" />
       <workItem from="1619155589107" duration="11865000" />
       <workItem from="1619248975268" duration="272000" />
+      <workItem from="1619516709210" duration="1953000" />
+      <workItem from="1619523099063" duration="2374000" />
+      <workItem from="1619529009819" duration="1680000" />
+      <workItem from="1619602688126" duration="1357000" />
     </task>
     <servers />
   </component>
