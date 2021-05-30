@@ -13,7 +13,12 @@ public class CharacterControllerMovement : MonoBehaviour,IMovement
     UseGravity = true;
     _characterController = GetComponent<CharacterController>() ?? gameObject.AddComponent<CharacterController>();
     }
-    
+
+    public void AddJumps(int count)
+    {
+        
+    }
+
     public void Movement(Vector3 direction,float speed=0)
     {
         if (speed <= 0)

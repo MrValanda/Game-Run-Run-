@@ -19,6 +19,7 @@ public class RigidBodyMovement : MonoBehaviour,IMovement
     }
 
     private bool _canJump=true;
+
     private void Start()
     {
         _transform = GetComponent<Transform>();
@@ -67,5 +68,11 @@ public class RigidBodyMovement : MonoBehaviour,IMovement
     {
         return Physics.Raycast(_transform.position, -_transform.up.normalized, _transform.lossyScale.y / 2f + 0.6f,
             _layerMask);
+    }
+
+    public void AddJumps(int count)
+    {
+        if (_currentCountJump - count >= 0)
+            _currentCountJump -= count;
     }
 }

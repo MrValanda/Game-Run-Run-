@@ -7,4 +7,5 @@
         void Jump();
         void Move(Vector3 direction);
         bool OnGround();
+        void AddJumps(int count);
     }

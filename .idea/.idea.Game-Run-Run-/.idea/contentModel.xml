@@ -5,31 +5,7 @@
     <e p="C:\Users\HP\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_Game-Run-Run-.1045044814.00" t="ExcludeRecursive" />
     <e p="D:\Новая папка\Game-Run-Run-" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
-      <e p="Assets" t="Include">
-        <e p="Scripts" t="Include">
-          <e p="Camera" t="Include">
-            <e p="CameraController.cs" t="Include" />
-          </e>
-          <e p="MapGenerator" t="Include">
-            <e p="GenerationMap.cs" t="Include" />
-            <e p="TemplateLevel.cs" t="Include" />
-          </e>
-          <e p="Object" t="Include">
-            <e p="RotationObject.cs" t="Include" />
-            <e p="TimeBody.cs" t="Include" />
-          </e>
-          <e p="Player" t="Include">
-            <e p="CharacterControllerMovement.cs" t="Include" />
-            <e p="IMovement.cs" t="Include" />
-            <e p="Player.cs" t="Include" />
-            <e p="RigidBodyMovement.cs" t="Include" />
-          </e>
-        </e>
-      </e>
       <e p="Game-Run-Run-.sln" t="IncludeFlat" />
-      <e p="obj" t="ExcludeRecursive" />
-      <e p="Packages" t="ExcludeRecursive" />
-      <e p="Temp\Bin" t="ExcludeRecursive" />
     </e>
   </component>
 </project>
